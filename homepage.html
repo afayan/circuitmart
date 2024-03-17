@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECelec</title>
+    <link rel="stylesheet" href="elec.css">
+</head>
+<body style="margin: 0px; background-color: grey;">
+  <div class="topbar" >
+    <p style="font-size: 20px; margin-left: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; color: white; margin-right:-30px ;">EC Elec</p>
+    <form class="form">
+        <label for="search">
+            <input required="" autocomplete="off" placeholder="Search electronics" id="search" type="text">
+            <div class="icon">
+                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
+                    <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <button type="reset" class="close-btn">
+                <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+        </label>
+    </form>
+    <div style="width: 30%; display: flex; flex: 1;"></div>
+    <div>
+        <button class="topbutton" onclick="dropProfile()">Profile</button>
+        <button class="topbutton" onclick="dropCart()">Cart</button>
+    </div>
+</div>
+
+    <div class="sidebar">
+
+       
+        <button class="button" onclick="goToHome()">
+            <span class="button-content" >Home </span>
+          </button>
+          <button class="button">
+            <span class="button-content">Sell </span>
+          </button>
+          <button class="button">
+            <span class="button-content">Offers </span>
+          </button>
+          <button class="button">
+            <span class="button-content">Service </span>
+          </button>
+          <button class="button" onclick="goToFilter()">
+            <span class="button-content"  >Laptops </span>
+          </button>
+          <button class="button" onclick="goToFilter()">
+            <span class="button-content"  >Mobiles </span>
+          </button>
+          <button class="button" onclick="goToFilter()">
+            <span class="button-content" >Filter </span>
+          </button>
+             
+          
+     
+    </div>
+
+
+    <div class="video-container">
+      <video autoplay muted src="images/ecelec2.mp4"></video>
+  </div>
+  <h1 class="titles">For you</h1>
+
+  <div class="cardRow" style="margin-top: 30px;">
+
+   
+    </div>
+
+    <h1 class="titles">Latest</h1>
+
+    <div class="cardRow" style="margin-top: 30px;">
+
+
+      <div class="newcard">
+        <img src="images/laptop3.webp" alt="Product Image" class="product-image">
+        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">Honor MagicBook</h3>
+        <p class="product-price">$19.99</p>
+        <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+            
+    <div class="newcard">
+      <img src="images/laptop2.avif" alt="Product Image" class="product-image">
+      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">laptop2</h3>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+  
+  <div class="newcard">
+    <img src="images/phone1.jpg" alt="Product Image" class="product-image">
+    <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">Good Phone</h3>
+    <p class="product-price">$19.99</p>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+  
+  <div class="newcard">
+    <img src="images/phone2.jpg" alt="Product Image" class="product-image">
+    <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">ANother phone</h3>
+    <p class="product-price">$19.99</p>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+  
+  <div class="newcard">
+    <img src="images/phone4.webp" alt="Product Image" class="product-image">
+    <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">Phone 3</h3>
+    <p class="product-price">$19.99</p>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+  
+  <div class="newcard">
+    <img src="images/latop1.jpg" alt="Product Image" class="product-image">
+    <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">ASUS TUF Gaming laptop</h3>
+    <p class="product-price">$19.99</p>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+  
+  <div class="newcard">
+    <img src="images/latop1.jpg" alt="Product Image" class="product-image">
+    <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">ASUS TUF Gaming laptop</h3>
+    <p class="product-price">$19.99</p>
+    <button class="add-to-cart-button">Add to Cart</button>
+  </div>
+      </div>
+
+    
+      <h1 class="titles">Trending</h1>
+
+      <div class="cardRow" style="margin-top: 30px;">
+  
+  
+        <div class="newcard">
+          <img src="images/laptop3.webp" alt="Product Image" class="product-image">
+          <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">Honor MagicBook</h3>
+          <p class="product-price">$19.99</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+      </div>
+              
+      <div class="newcard">
+        <img src="images/laptop2.avif" alt="Product Image" class="product-image">
+        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">laptop2</h3>
+        <p class="product-price">$19.99</p>
+        <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+    
+    <div class="newcard">
+      <img src="images/phone1.jpg" alt="Product Image" class="product-image">
+      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">Good Phone</h3>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+    
+    <div class="newcard">
+      <img src="images/phone2.jpg" alt="Product Image" class="product-image">
+      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">ANother phone</h3>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+    
+    <div class="newcard">
+      <img src="images/phone4.webp" alt="Product Image" class="product-image">
+      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">Phone 3</h3>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+    
+    <div class="newcard">
+      <img src="images/latop1.jpg" alt="Product Image" class="product-image">
+      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">ASUS TUF Gaming laptop</h3>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+    
+    <div class="newcard">
+      <img src="images/latop1.jpg" alt="Product Image" class="product-image">
+      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">ASUS TUF Gaming laptop</h3>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+        </div>
+
+
+<div class="cartMenu">
+  <h1 style="font-family: Arial, Helvetica, sans-serif; margin-left: 10px;">My Cart</h1>
+  <div style="display: flex; flex-direction: row;">
+    <button onclick="dropCart()" class="backButton">Back</button>
+    <button class="backButton" onclick="goToCheckout()">Check Out</button>
+  </div>
+ 
+  <div id="cart"></div>
+</div>
+
+
+<div class="profileMenu">
+  <h1 style="font-family: Arial, Helvetica, sans-serif; margin-left: 10px;">My Profile</h1>
+  <div style="display: flex; flex-direction: row;">
+    <button onclick="dropProfile()" class="backButton">Back</button>
+    <button class="backButton">Edit Profile</button>
+  </div>
+
+  <p class="profInfo"></p>
+ 
+  <div id="profileInfo"></div>
+</div>
+
+
+
+
+<!-- sign in stuff-->
+
+<!--
+
+   <button class="filter">Filter</button>
+
+
+<div class="form-box">
+  <p class="title">Sign up</p>
+  <p class="subtitle">Create a free account with your email.</p>
+  <div class="form-container">
+    <input type="text" class="input" placeholder="Full Name">
+    <input type="email" class="input" placeholder="Email">
+    <input type="password" class="input" placeholder="Password">
+  </div>
+  <button class="signButton" onclick="openPage()">Sign up</button>
+  <p class="form-section">Have an account? <a href="">Log in</a> </p>
+</div>
+
+
+      <div class="curtain"></div>
+   --> 
+    <script type="module" src="checkout.js"></script>
+    <script src="elec.js"></script>
+
+</body>
+</html>
