@@ -89,9 +89,7 @@
       $counter++;
     ?>
 
-<div class="newcard" style="width: 40px;">  <a href="product.php"> <?php  
-               $_SESSION['devid'] = $row["deviceid"];
-                  ?>
+<div class="newcard" style="width: 40px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" > 
         <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
         <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
         <?php echo $row["device"] ?>

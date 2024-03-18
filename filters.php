@@ -87,6 +87,26 @@
 
                 <form action="filters.php" method="post">
 
+
+                    <h1>Device type</h1>
+                    <div style="display: flex; flex-direction:row">
+                    <div style="display: flex; flex-direction:row">
+                    <p class="categories">Laptop</p>
+                    <input type="radio" name="type" value="laptop">
+                    </div>
+
+                    <div style="display: flex; flex-direction:row">
+                    <p class="categories">Phone</p>
+                    <input type="radio" name="type" value="phone">
+                    </div>
+
+                    <div style="display: flex; flex-direction:row">
+                    <p class="categories">other</p>
+                    <input type="radio" name="type" value="other">
+                    </div>
+                    </div>
+
+
                     <h1>Performance</h1>
                     <div style="display: flex; flex-direction:row">
                     <div style="display: flex; flex-direction:row">
@@ -153,50 +173,58 @@
             <h1 class="titles" style="margin-left: 300px; margin-top: 130px;">Filtered</h1>
 
     <div class="cardRow" style="margin-top: 30px; margin-left: 310px ">
-        <?php
+  <?php
+    if(isset($_POST["filter"])){
 
-        if(isset($_POST["filter"])){
+        $performance = $_POST["performance"];
+        $price = $_POST["price"];
+        $storage = $_POST["storage"];
+        $keyword = $_POST["keywords"];
+        $type = $_POST["type"];
 
-            $performance = $_POST["performance"];
-            $price = $_POST["price"];
-            $storage = $_POST["storage"];
-            $keyword = $_POST["keywords"];
+        // Prepare SQL query with placeholders
+        $filter = "SELECT * FROM elec WHERE performance = ? AND storage = ? AND type = ?";
+        $params = [$performance, $storage, $type];
 
-            
-            if($keyword!=null){
-                $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND device = '$keyword'; ";
-             }
+        // Add price condition dynamically
+        switch ($price) {
+            case "<15000":
+                $filter .= " AND price < 15000";
+                break;
+            case ">15000 AND price <50000":
+                $filter .= " AND price > 15000 AND price < 50000";
+                break;
+            case ">50000":
+                $filter .= " AND price > 50000";
+                break;
+        }
 
-             else{
-                $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage'; ";
-             }
-            //$filter = "SELECT * from elec WHERE performance = '$performance' ;"; //filter query here
+        // Add keyword condition if provided
+        if (!empty($keyword)) {
+            $filter .= " AND device = ?";
+            $params[] = $keyword;
+        }
 
-            $filteredresult = mysqli_query($conn, $filter);
+        // Prepare and execute the statement
+        $stmt = $conn->prepare($filter);
+        $stmt->bind_param(str_repeat('s', count($params)), ...$params);
+        $stmt->execute();
+        $filteredresult = $stmt->get_result();
 
-           
-
-            //echo $filteredresult;
-           // echo "Cktmart";
-        ?>
-
+        // Fetch and display filtered results
+        while($row = $filteredresult->fetch_assoc()) {
+?>
+            <div class="newcard" style="width: 40px;">
+                <img src="images/<?php echo $row["image"]; ?>" alt="Product Image" class="product-image">
+                <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;"><?php echo $row["device"]; ?></h3>
+                <p class="product-price"><?php echo $row["price"]; ?></p>
+                <button class="add-to-cart-button">Add to Cart</button>
+            </div>
 <?php
-    while( $row = mysqli_fetch_assoc($filteredresult)){   
-    ?>
+        }
+    }
+?>
 
-<div class="newcard" style="width: 40px;">
-        <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
-        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
-        <?php echo $row["device"] ?>
-    </h3>
-        <p class="product-price">
-        <?php echo $row["price"] ?>
-        </p>
-        <button class="add-to-cart-button">Add to Cart</button>
-    </div>
-    <?php
-    }}
-    ?>
     </div>
 
 
