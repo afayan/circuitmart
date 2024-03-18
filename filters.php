@@ -173,58 +173,51 @@
             <h1 class="titles" style="margin-left: 300px; margin-top: 130px;">Filtered</h1>
 
     <div class="cardRow" style="margin-top: 30px; margin-left: 310px ">
-  <?php
-    if(isset($_POST["filter"])){
+        <?php
 
-        $performance = $_POST["performance"];
-        $price = $_POST["price"];
-        $storage = $_POST["storage"];
-        $keyword = $_POST["keywords"];
-        $type = $_POST["type"];
+        if(isset($_POST["filter"])){
 
-        // Prepare SQL query with placeholders
-        $filter = "SELECT * FROM elec WHERE performance = ? AND storage = ? AND type = ?";
-        $params = [$performance, $storage, $type];
+            echo $performance = $_POST["performance"];
+            echo $price = $_POST["price"];
+            echo $storage = $_POST["storage"];
+            echo $keyword = $_POST["keywords"];
+            echo $type = $_POST["type"];
 
-        // Add price condition dynamically
-        switch ($price) {
-            case "<15000":
-                $filter .= " AND price < 15000";
-                break;
-            case ">15000 AND price <50000":
-                $filter .= " AND price > 15000 AND price < 50000";
-                break;
-            case ">50000":
-                $filter .= " AND price > 50000";
-                break;
-        }
+            
+            if($keyword!=null){
+                $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND device = '$keyword' AND type = '$type'; ";
+             }
 
-        // Add keyword condition if provided
-        if (!empty($keyword)) {
-            $filter .= " AND device = ?";
-            $params[] = $keyword;
-        }
+             else{
+                $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND type = '$type';; ";
+             }
+            //$filter = "SELECT * from elec WHERE performance = '$performance' ;"; //filter query here
 
-        // Prepare and execute the statement
-        $stmt = $conn->prepare($filter);
-        $stmt->bind_param(str_repeat('s', count($params)), ...$params);
-        $stmt->execute();
-        $filteredresult = $stmt->get_result();
+            $filteredresult = mysqli_query($conn, $filter);
 
-        // Fetch and display filtered results
-        while($row = $filteredresult->fetch_assoc()) {
-?>
-            <div class="newcard" style="width: 40px;">
-                <img src="images/<?php echo $row["image"]; ?>" alt="Product Image" class="product-image">
-                <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;"><?php echo $row["device"]; ?></h3>
-                <p class="product-price"><?php echo $row["price"]; ?></p>
-                <button class="add-to-cart-button">Add to Cart</button>
-            </div>
+           
+
+            //echo $filteredresult;
+           // echo "Cktmart";
+        ?>
+
 <?php
-        }
-    }
-?>
+    while( $row = mysqli_fetch_assoc($filteredresult)){   
+    ?>
 
+<div class="newcard" style="width: 40px;">
+        <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
+        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
+        <?php echo $row["device"] ?>
+    </h3>
+        <p class="product-price">
+        <?php echo $row["price"] ?>
+        </p>
+        <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+    <?php
+    }}
+    ?>
     </div>
 
 
