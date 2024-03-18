@@ -89,7 +89,7 @@
       $counter++;
     ?>
 
-<div class="newcard">  <a href="product.php"> <?php  
+<div class="newcard" style="width: 40px;">  <a href="product.php"> <?php  
                $_SESSION['devid'] = $row["deviceid"];
                   ?>
         <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
@@ -117,7 +117,7 @@
   while($row = mysqli_fetch_assoc($phoneList)){   
   ?>
 
-<div class="newcard">
+<div class="newcard" style="width: 40px;">
       <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
       <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
       <?php echo $row["device"] ?>
@@ -141,7 +141,7 @@
   while($row = mysqli_fetch_assoc($laptopList)){   
   ?>
 
-<div class="newcard">
+<div class="newcard" style="width: 40px;">
       <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
       <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
       <?php echo $row["device"] ?>

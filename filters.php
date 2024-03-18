@@ -184,7 +184,7 @@
     while( $row = mysqli_fetch_assoc($filteredresult)){   
     ?>
 
-<div class="newcard">
+<div class="newcard" style="width: 40px;">
         <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
         <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
         <?php echo $row["device"] ?>
