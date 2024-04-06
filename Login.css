@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header .summerSale {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    border: 2px solid black;
+    width: 100%;
+    height: 48px;
+    background-color: black;
+    color: white;
+}
+
+header .language {
+    position: relative;
+    left: 300px;
+    background: none;
+    color: white;
+    font-size: 14px;
+    border-color: black;
+}
+
+header .shopNow {
+    text-decoration: underline;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+header .summerSale p {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+header .NavigationBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 170px;
+    height: 54px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+header .NavigationBar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    left: 150px;
+    cursor: pointer;
+}
+
+header .NavigationBar ul li {
+    list-style-type: none;
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+header .NavigationBar h2 {
+    font-weight: 900;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    left: 120px;
+}
+
+header.NavigationBar .SearchBox {
+    font-family: "Baloo Bhai 2", sans-serif;
+    width: 50px;
+}
+
+header .NavigationBar .search-container {
+    display: flex;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    margin: 10px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 6px 0 0 6px;
+}
+
+.search-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #2196f3;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 6px 6px 0;
+}
+
+.search-icon {
+    width: 28px;
+    height: 20px;
+    fill: white;
+}
+
+header .NavigationBar ul :hover {
+    color: #c39898;
+}
+
+main .SignInPage {
+    margin-top: 50px;
+    border: 2px solid black;
+    width: auto;
+    height: 700px;
+}
+
+main .SignInPage img {
+    width: 590px;
+    height: 590px;
+    float: right;
+    position: relative;
+    right: 70px;
+}
+
+main .SignInPage .InputForm {
+    border: 2px solid white;
+    width: 371px;
+    height: 530px;
+    margin-left: 120px;
+    margin-top: 60px;
+}
+
+main .InputForm h1 {
+    position: relative;
+    left: 37px;
+    margin-top: 85px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+main .InputForm p {
+    position: relative;
+    left: 28px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+main .InputForm input {
+    position: relative;
+    left: 28px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 5px;
+    text-decoration: underline;
+    width: 100%;
+}
+
+main .buttons button {
+    position: relative;
+    left: 28px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 5px;
+    height: 56px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+main .buttons #firstButton {
+    color: white;
+    background-color: rgba(8, 101, 8, 0.79);
+
+}
+
+main .buttons #secondButton {
+    color: black;
+    background-color: white;
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+main .buttons #secondButton img {
+    width: 40px;
+    height: 35px;
+    margin-right: 10px;
+    align-self: flex-start;
+    left: 2px;
+    margin-top: 3px;
+}
+
+main .AlreadyHaveOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+main .AlreadyHaveOne p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+main .AlreadyHaveOne button {
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+    position: relative;
+    left: 35px;
+    top: 3px;
+    cursor: pointer;
+}
+
+footer {
+    display: grid;
+    height: 420px;
+    width: 100%;
+    background-color: black;
+    grid-template-columns: repeat(5, 20%);
+    color: white;
+}
+
+footer .container-1 {
+    grid-column: 1/2;
+    display: grid;
+    place-content: baseline;
+    padding-top: 65px;
+    padding-left: 55px;
+}
+
+footer .container-2 {
+    grid-column: 2/3;
+    display: grid;
+    place-content: baseline;
+    padding-top: 65px;
+    padding-left: 55px;
+}
+
+footer .container-3 {
+    grid-column: 3/4;
+    display: grid;
+    place-content: baseline;
+    padding-top: 65px;
+    padding-left: 55px;
+}
+
+footer .container-4 {
+    grid-column: 4/5;
+    display: grid;
+    place-content: baseline;
+    padding-top: 65px;
+    padding-left: 55px;
+}
+
+footer .container-5 {
+    grid-column: 5/6;
+    display: grid;
+    place-content: baseline;
+    padding-top: 65px;
+    padding-left: 55px;
+}
+
+footer .container-1 ul {
+    list-style: none;
+}
+
+footer .container-2 ul {
+    list-style: none;
+}
+
+footer .container-3 ul {
+    list-style: none;
+}
+
+footer .container-4 ul {
+    list-style: none;
+}
+
+footer .container-5 ul {
+    list-style: none;
+}
+
+footer .container-1 ul li {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+footer .container-2 ul li {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+footer .container-3 ul li:first-child {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+footer .container-4 ul li:first-child {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+footer .container-5 ul li {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+footer .container-1 h2 {
+    font-weight: 300;
+    font-size: 26px;
+    font-family: "Roboto", sans-serif;
+}
+
+footer .container-1 p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+footer .container-1 form input {
+    background-color: black;
+    border-color: rgb(237, 212, 212);
+    height: 30px;
+    border-radius: 7px;
+    font-family: "Roboto", sans-serif;
+    padding: 5px 10px;
+    font-size: large;
+    margin-top: 10px;
+    position: relative;
+    right: 40px;
+    margin-left: 15px;
+}
+
+footer .container-1 form #button {
+    height: 20px;
+    color: white;
+    display: inline-block;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 14px;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    position: relative;
+    right: 50px;
+}
+
+footer .container-1 form #button a {
+    margin-left: auto;
+    font-size: 1.2em;
+    color: inherit;
+}
+
+footer .container-1 li,
+h2,
+p,
+form {
+    padding: 8px 10px;
+}
+
+footer .container-2 p {
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+footer .container-2 ul li {
+    padding: 8px 10px;
+}
+
+footer .container-3 ul {
+    list-style: none;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+footer .container-3 ul li {
+    padding: 8px 10px;
+}
+
+footer .container-4 ul {
+    list-style: none;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+footer .container-4 ul li {
+    padding: 8px 10px;
+}
+
+.container-6 {
+    color: #a79e9e;
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    margin-top: 0px;
+    width: 100%;
+    font-size: 20px;
+}

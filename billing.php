@@ -1,4 +1,9 @@
 <!-- billing.html -->
+<?php 
+   // include "header.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,42 +11,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill</title>
 </head>
-<body>
+<body style="background-color: grey;">
     <h1>Shopping Cart</h1>
-    <div id="cartItems"></div>
-    <button onclick="displayCart()">See Bill</button>
-    <script src="backend.js"></script>
+    <div id="cartItems" style="display: flex; flex-direction:row">
+
+    </div>
+
+    
     <script>
-        function displayCart() {
-            const retrievedArray = JSON.parse(localStorage.getItem('cart'));
-            const cartItemsDiv = document.getElementById('cartItems');
-            cartItemsDiv.innerHTML = ''; // Clear previous content
-            
-            if (retrievedArray && retrievedArray.length > 0) {
-                retrievedArray.forEach(item => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.innerHTML = `
-                        <p>Product Name: ${item.name}</p>
-                        <p>Price: $${item.price.toFixed(2)}</p>
-                        <button onclick="removeFromCart('${item.name}', ${item.price})">Remove</button>
-                        <hr>
-                    `;
-                    cartItemsDiv.appendChild(itemDiv);
-                });
-            } else {
-                cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
-            }
-        }
+        function getCartFromLocalStorage() {
+    var finalcart = JSON.parse(localStorage.getItem('finalCart'));
+    return finalcart;
+    }
 
-        function removeFromCart(name, price) {
-            const retrievedArray = JSON.parse(localStorage.getItem('cart'));
-            const updatedArray = retrievedArray.filter(item => !(item.name === name && item.price === price));
-            localStorage.setItem('cart', JSON.stringify(updatedArray));
-            displayCart(); // Refresh cart display
-        }
+    
+    cart = getCartFromLocalStorage()
+    cartItems = document.querySelector('#cartItems')
 
-        // Initial display
-        displayCart();
+    function renderItems(){
+
+        let cartItemRenderings = ''
+
+        for(i = 0; i< cart.length; i++){
+        const name = cart[i].name;
+        const info = cart[i];
+        const html = `<div><p>name = ${name}</p>
+        <p>Item price</p>
+        <button onclick="cart.splice(${i},1);renderItems()
+        ">Delete</button></div>`
+
+        cartItemRenderings+=html;
+
+        cartItems.innerHTML = cartItemRenderings
+    }
+    }
+
+    renderItems()
     </script>
 </body>
 </html>

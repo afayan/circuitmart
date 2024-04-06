@@ -9,9 +9,7 @@ include "header.php";
         # code...
         $id = $_GET["id"];
     }
-
     echo $id;
-
     $query = "select * from elec where deviceid = $id";
 
     $productinfo = mysqli_query($conn, $query);
@@ -48,6 +46,7 @@ include "header.php";
     padding: 20px;
     align-items: center; 
     justify-content: flex-start; 
+    top: 0px;
 }
         img {
             max-width: 100%;
@@ -70,16 +69,53 @@ include "header.php";
 </head>
 <body>
     <div class="leftside">
-        <img src="images/<?php echo $row['image'] ?>" alt="Product Image">
+        <img src="images/<?php echo $row['image'] ?>" alt="Product Image" style= "max-height: 500px">
     </div>
     <div class="rightside">
-        <h2><?php echo $row['device']; ?></h2>
+        <h2 class="deviceName"><?php echo $row['device']; ?></h2>
         <p><strong>Price:</strong> <?php echo $row['price']; ?></p>
         <p><strong>Description:</strong> <?php echo $row['description']; ?></p>
         <!-- You can add more details here if needed -->
         <button class="add-to-cart-button">Buy Now</button>
     </div>
 
-    <script src="backend.js"></script>
+    <script>
+    // Function to handle adding a product to the cart
+    function addToCart(productId) {
+        // Retrieve the product information based on its ID
+        var product = {
+            id: productId,
+            name: '<?php echo $row["device"]; ?>',
+            price: <?php echo $row["price"]; ?>
+            // Add more properties as needed
+        };
+
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Add the product to the cart
+        cart.push(product);
+
+        // Save the updated cart to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        console.log("Cart updated:", cart);    }
+
+    // Event listener to add product to cart when the "Buy Now" button is clicked
+    document.addEventListener('DOMContentLoaded', function() {
+        var addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+        addToCartButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Extract the product ID from the button's data attribute or any other method
+                var productId = button.getAttribute('data-product-id');
+                addToCart(productId);
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
+
+<?php
+
+?>

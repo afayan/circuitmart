@@ -1,5 +1,7 @@
 <?php
     require_once "database.php";
+    include "header.php";
+    include "cktmart.php";
 
     $sql = "SELECT * FROM elec";
     $phones = "SELECT * FROM elec WHERE type = 'phone';";
@@ -23,45 +25,10 @@
     <link rel="stylesheet" href="elec.css">
 </head>
 <body style="margin: 0px; background-color: grey;">
-  <div class="topbar" >
-    <p style="font-size: 20px; margin-left: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; color: white; margin-right:-30px ;">Circuit Mart</p>
-    <div style="width: 30%; display: flex; flex: 1;"></div>
-    <div>
-        <button class="topbutton" onclick="dropProfile()">Profile</button>
-        <button class="topbutton" onclick="saveCart()">Cart</button>
-    </div>
-</div>
-
-    <div class="sidebar">       
-        <button class="button" onclick="window.location.href='homepage.php'">
-            <span class="button-content" >Home </span>
-          </button>
-          <button class="button" onclick="window.location.href='sell.php'">
-            <span class="button-content">Sell </span>
-          </button>
-          <button class="button">
-            <span class="button-content">Offers </span>
-          </button>
-          <button class="button">
-            <span class="button-content">Service </span>
-          </button>
-          <button class="button" onclick="window.location.href='filters.php'">
-            <span class="button-content"  >Laptops </span>
-          </button>
-          <button class="button" onclick="window.location.href='filters.php'">
-            <span class="button-content"  >Mobiles </span>
-          </button>
-          <button class="button" onclick="window.location.href='filters.php'">
-            <span class="button-content" >Filter </span>
-          </button>
-             
-          
-     
-    </div>
 
 
     <div class="video-container">
-      <video autoplay muted src="images/ecelec2.mp4"></video>
+      <video autoplay muted src="images/cktmartvideo.mp4"></video>
   </div>
   <h1 class="titles">For you</h1>
 
@@ -89,7 +56,7 @@
       $counter++;
     ?>
 
-<div class="newcard" style="width: 40px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" > 
+<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
         <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
         <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
         <?php echo $row["device"] ?>
@@ -97,8 +64,12 @@
         <p class="product-price">
         <?php echo $row["price"] ?>
         </p>
-        <button class="add-to-cart-button">Add to Cart</button>
+      <!--  <button class="add-to-cart-button">Add to Cart</button>  -->
 
+
+      <p class="descript" style="color:gray">
+        <?php echo $row["description"] ?>      
+        </p>
         </a>
     </div>
     <?php
@@ -115,16 +86,21 @@
   while($row = mysqli_fetch_assoc($phoneList)){   
   ?>
 
-<div class="newcard" style="width: 40px;">
-      <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
-      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
-      <?php echo $row["device"] ?>
-  </h3>
-      <p class="product-price">
-      <?php echo $row["price"] ?>
-      </p>
-      <button class="add-to-cart-button">Add to Cart</button>
-  </div>
+<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
+        <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
+        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
+        <?php echo $row["device"] ?>
+    </h3>
+        <p class="product-price">
+        <?php echo $row["price"] ?>
+        </p>
+
+        <p class="descript" style="color:gray">
+        <?php echo $row["description"] ?>      
+        </p>
+
+        </a>
+    </div>
   <?php
   }
   ?>
@@ -139,16 +115,19 @@
   while($row = mysqli_fetch_assoc($laptopList)){   
   ?>
 
-<div class="newcard" style="width: 40px;">
-      <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
-      <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
-      <?php echo $row["device"] ?>
-  </h3>
-      <p class="product-price">
-      <?php echo $row["price"] ?>
-      </p>
-      <button class="add-to-cart-button">Add to Cart</button>
-  </div>
+<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
+        <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
+        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
+        <?php echo $row["device"] ?>
+    </h3>
+        <p class="product-price">
+        <?php echo $row["price"] ?>
+        </p>
+        <p class="descript" style="color:gray">
+        <?php echo $row["description"] ?>      
+        </p>
+        </a>
+    </div>
   <?php
   }
   ?>

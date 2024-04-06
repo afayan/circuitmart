@@ -1,5 +1,6 @@
 <?php
     require_once "database.php";
+    include "header.php";
 
     $sql = "SELECT * FROM elec";
     $all_product = $conn->query($sql);
@@ -30,58 +31,7 @@
 
 
 
-        <div class="topbar" >
-            <p style="font-size: 20px; margin-left: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; color: white; margin-right:-30px ;">EC Elec</p>
-            <form class="form">
-                <label for="search">
-                    <input required="" autocomplete="off" placeholder="Search electronics" id="search" type="text">
-                    <div class="icon">
-                        <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                        </svg>
-                        <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
-                            <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
-                        </svg>
-                    </div>
-                    <button type="reset" class="close-btn">
-                        <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </label>
-            </form>
-            <div style="width: 30%; display: flex; flex: 1;"></div>
-            <div>
-                <button class="topbutton" onclick="saveCart()">Cart</button>
-            </div>
-        </div>
-        
-        <div class="sidebar">       
-        <button class="button" onclick="window.location.href='homepage.php'">
-            <span class="button-content" >Home </span>
-          </button>
-          <button class="button" onclick="window.location.href='sell.php'">
-            <span class="button-content">Sell </span>
-          </button>
-          <button class="button">
-            <span class="button-content">Offers </span>
-          </button>
-          <button class="button">
-            <span class="button-content">Service </span>
-          </button>
-          <button class="button" onclick="window.location.href='filters.php'">
-            <span class="button-content"  >Laptops </span>
-          </button>
-          <button class="button" onclick="window.location.href='filters.php'">
-            <span class="button-content"  >Mobiles </span>
-          </button>
-          <button class="button" onclick="window.location.href='filters.php'">
-            <span class="button-content" >Filter </span>
-          </button>
-             
-          
-     
-    </div>
+       
 
             <div class="filterBar">
 
@@ -185,7 +135,7 @@
 
             
             if($keyword!=null){
-                $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND device = '$keyword' AND type = '$type'; ";
+                $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND device LIKE '%$keyword%' AND type = '$type'; ";
              }
 
              else{
@@ -205,7 +155,7 @@
     while( $row = mysqli_fetch_assoc($filteredresult)){   
     ?>
 
-<div class="newcard" style="width: 40px;">
+<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
         <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
         <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
         <?php echo $row["device"] ?>
@@ -213,7 +163,13 @@
         <p class="product-price">
         <?php echo $row["price"] ?>
         </p>
+
+        <p class="descript" style="color:gray">
+        <?php echo $row["description"] ?>      
+        </p>
         <button class="add-to-cart-button">Add to Cart</button>
+
+        </a>
     </div>
     <?php
     }}

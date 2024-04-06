@@ -9,13 +9,13 @@ let name = "Salman";
 let email = "bollywood@gmail.com";
 let password;
 
-
-
 //start
 
 const profInfo = document.querySelector('.profInfo');
 const cartMenu = document.querySelector('.cartMenu');
 const profileMenu = document.querySelector('.profileMenu');
+
+
 
 /*function openPage() {
     console.log('Shit is real');
@@ -72,9 +72,11 @@ addToCartButtons.forEach(button => {
     button.addEventListener('click', function () {
 
         console.log("Hell World")
-        const card = this.closest('.newcard');
-        const productName = card.querySelector('.product-name').textContent;
-        const productPrice = parseFloat(card.querySelector('.product-price').textContent.slice(1));
+        //const card = this.closest('.newcard');
+        const productName = card.querySelector('.deviceName');
+        console.log(productName)
+   
+        //const productPrice = parseFloat(card.querySelector('.product-price').textContent.slice(1));
         addToCart(productName, productPrice);
     });
 });

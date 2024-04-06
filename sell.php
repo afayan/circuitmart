@@ -97,9 +97,10 @@ button:hover {
       </div>
 
       <div class="form-group">
-        <label for="product-name">Image url:</label>
-        <input type="text" id="product-name" name="imagelink" required>
-      </div>
+  <label for="product-image">Upload Image:</label>
+  <input type="file" id="product-image" name="image" required>
+</div>
+
      
       <div class="form-group">
         <label for="product-price">Price ($):</label>
@@ -130,10 +131,11 @@ button:hover {
 </html>
 
 <?php
+
     $name = $_POST["product-name"];
     $description = $_POST["product-description"];
     $price = $_POST["product-price"];
-    $image = $_POST["imagelink"];
+    $image = $_POST["image"];
     $type = $_POST["type"];
 
     $ram = $_POST["RAM"];

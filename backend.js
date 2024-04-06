@@ -1,5 +1,7 @@
 const cart = [];
 
+console.log("backend.js connected")
+
 function displayCart() {
     const retrievedArray = JSON.parse(localStorage.getItem('cart'));
     console.log(retrievedArray);
@@ -26,11 +28,11 @@ addToCartButtons.forEach(button => {
     });
 });
 
-function saveCart(){
+/*function saveCart(){
 
 
     if (cart!=null) {
-        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem('finalCart', JSON.stringify(cart));
         window.location.href='billing.php';
     }
 
@@ -39,3 +41,4 @@ function saveCart(){
     }
     
 }
+*/
