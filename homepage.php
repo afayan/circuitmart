@@ -115,7 +115,7 @@
   while($row = mysqli_fetch_assoc($laptopList)){   
   ?>
 
-<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
+<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black;"> 
         <img src= "images/<?php echo $row["image"] ?>"  alt="Product Image" class="product-image">
         <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
         <?php echo $row["device"] ?>

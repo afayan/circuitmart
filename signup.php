@@ -48,7 +48,7 @@ include "database.php";
     <main>
         <div class="SignInPage">
             <div class="Img">
-                <img src="/sem4miniproj/Assests/Images/SignIn.png" alt="">
+                <img src="images/stock1.jpg" alt="">
             </div>
             <div class="InputForm">
                 <h1>Create an account</h1>
@@ -62,9 +62,6 @@ include "database.php";
                     <input type="email" name="Email" id="" placeholder="Email">
                     <br>
 
-                    <label for="PhoneNumber"></label>
-                    <input type="number" name="PhoneNumber" id="" placeholder="Phone Number">
-                    <br>
 
                     <label for="Password"></label>
                     <input type="password" name="Password" id="" placeholder="Password">

@@ -124,13 +124,17 @@ button:hover {
       <input type="number" name="RAM" placeholder="Enter device RAM (GB)">
       <input type="number" name="ROM" placeholder="Enter device ROM (GB)">
 
-      <button type="submit">Sell Now</button>
+      <button type="submit" name="sell">Sell Now</button>
     </form>
   </div>
 </body>
 </html>
 
 <?php
+
+if(isset($_POST["sell"])){
+
+
 
     $name = $_POST["product-name"];
     $description = $_POST["product-description"];
@@ -199,4 +203,6 @@ button:hover {
     $insert = "INSERT INTO elec (device, price, image, description, storage, performance, type) VALUES ('$name', $price, '$image', '$description','$storage','$performance','$type')";
 
     mysqli_query($conn, $insert);
+
+  }
 ?>

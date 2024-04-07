@@ -27,7 +27,8 @@ include "header.php";
     <style>
         body {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            padding-top: 180px;
             margin: 0;
             height: 100vh;
         }
@@ -38,15 +39,14 @@ include "header.php";
             align-items: center;
         }
         .leftside {
-            background-color: aqua;
         }
         .rightside {
-    background-color: bisque;
     flex-direction: column;
     padding: 20px;
     align-items: center; 
     justify-content: flex-start; 
-    top: 0px;
+    top: 260px;
+    height: 60%;
 }
         img {
             max-width: 100%;
@@ -65,19 +65,65 @@ include "header.php";
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .deviceName{
+            top: 90px;
+        }
     </style>
 </head>
-<body>
+<body >
+
+<div style="display: flex; flex-direction:row">
     <div class="leftside">
-        <img src="images/<?php echo $row['image'] ?>" alt="Product Image" style= "max-height: 500px">
+        <img src="images/<?php echo $row['image'] ?>" alt="Product Image" style= "max-height: 500px;">
     </div>
     <div class="rightside">
         <h2 class="deviceName"><?php echo $row['device']; ?></h2>
         <p><strong>Price:</strong> <?php echo $row['price']; ?></p>
         <p><strong>Description:</strong> <?php echo $row['description']; ?></p>
         <!-- You can add more details here if needed -->
-        <button class="add-to-cart-button">Buy Now</button>
+        <button class="add-to-cart-button">Add to Cart</button>
     </div>
+
+    </div>
+    <h1>Related</h1>
+
+    <div class="cardRow" style="margin-top: 30px; margin-left: 10px ">
+
+    <?php
+    $type = $row['type'];
+
+    $relatedQuery = "select * from elec where type = '$type';";
+
+    $relatedItems = mysqli_query($conn, $relatedQuery);
+    
+    while( $nrow = mysqli_fetch_assoc($relatedItems)){ 
+
+    ?>
+
+<div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $nrow["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
+        <img src= "images/<?php echo $nrow["image"] ?>"  alt="Product Image" class="product-image">
+        <h3 class="product-name" style="font-family: Arial, Helvetica, sans-serif;">
+        <?php echo $nrow["device"] ?>
+    </h3>
+        <p class="product-price">
+        <?php echo $nrow["price"] ?>
+        </p>
+
+        <p class="descript" style="color:gray">
+        <?php echo $nrow["description"] ?>      
+        </p>
+        <button class="add-to-cart-button">Add to Cart</button>
+
+        </a>
+    </div>
+    <?php
+    }
+    ?>
+
+</div>
+
+
 
     <script>
     // Function to handle adding a product to the cart
@@ -85,7 +131,7 @@ include "header.php";
         // Retrieve the product information based on its ID
         var product = {
             id: productId,
-            name: '<?php echo $row["device"]; ?>',
+            name :'<?php echo $row["device"]; ?>',
             price: <?php echo $row["price"]; ?>
             // Add more properties as needed
         };

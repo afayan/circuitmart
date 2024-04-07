@@ -28,15 +28,19 @@ session_start();
 </div>
 
     <div class="sidebar">       
-        <button class="button" onclick="window.location.href='homepage.php'">
+        <button class="topbutton" onclick="window.location.href='homepage.php'">
             <span class="button-content" >Home </span>
           </button>
-          <button class="button">
+          <button class="topbutton">
             <span class="button-content">Service </span>
           </button>
 
-          <button class="button" onclick="window.location.href='filters.php'">
+          <button class="topbutton" onclick="window.location.href='filters.php'">
             <span class="button-content" >Filter </span>
+          </button>
+
+          <button class="topbutton" onclick="window.location.href='searchpage.php'">
+            <span class="button-content" >Search </span>
           </button>
              
           

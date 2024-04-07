@@ -48,7 +48,7 @@
     <main>
         <div class="SignInPage">
             <div class="Img">
-                <img src="/sem4miniproj/Assests/Images/SignIn.png" alt="">
+                <img src="images/stock1.jpg" alt="">
             </div>
             <div class="InputForm">
                 <h1>Log in to Exclusive</h1>

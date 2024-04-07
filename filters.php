@@ -25,9 +25,7 @@
     </style>
 </head>
 <body style="margin: 0px; background-color: grey;">
-    <label class="cyberpunk-checkbox-label">
-        <input type="checkbox" class="cyberpunk-checkbox">
-        Check me</label>
+
 
 
 
@@ -38,80 +36,81 @@
                 <form action="filters.php" method="post">
 
 
-                    <h1>Device type</h1>
-                    <div style="display: flex; flex-direction:row">
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Laptop</p>
-                    <input type="radio" name="type" value="laptop">
+                    <h1 class="catTitles">Device type</h1>
+           
+
+                    <div class="radio-inputs">
+                    <label class="radio">
+                        <input type="radio" name="type" value="laptop" id="laptops">
+                        <span class="name">Laptop</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="type" value="phone" id="phones">
+                        <span class="name">Phone</span>
+                    </label>
+                        
+                    <label class="radio">
+                        <input type="radio" name="type" value="other" id="other" >
+                        <span class="name">Other</span>
+                    </label>
                     </div>
 
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Phone</p>
-                    <input type="radio" name="type" value="phone">
-                    </div>
+                    <h1 class="catTitles">Performance</h1>
+    
 
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">other</p>
-                    <input type="radio" name="type" value="other">
-                    </div>
-                    </div>
+                        <div class="radio-inputs">
+                        <label class="radio">
+                            <input type="radio" name="performance" value="low">
+                            <span class="name">low</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="performance" value="medium">
+                            <span class="name">medium</span>
+                        </label>
+                            
+                        <label class="radio">
+                            <input type="radio" name="performance" value="high" >
+                            <span class="name">high</span>
+                        </label>
+                        </div>
 
+                    <h1 class="catTitles">Price</h1>
 
-                    <h1>Performance</h1>
-                    <div style="display: flex; flex-direction:row">
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Low</p>
-                    <input type="radio" name="performance" value="low">
-                    </div>
-
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Medium</p>
-                    <input type="radio" name="performance" value="medium">
-                    </div>
-
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">High</p>
-                    <input type="radio" name="performance" value="high">
-                    </div>
-                    </div>
-
-                    <h1>Price</h1>
-                    <div style="display: flex; flex-direction:row">
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Low</p>
-                    <input type="radio" name="price" value="<15000">
-                    </div>
-
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Medium</p>
-                    <input type="radio" name="price" value=">15000 AND price <50000">
-                    </div>
-
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">High</p>
-                    <input type="radio" name="price" value=">50000">
-                    </div>
-                    </div>
+                    <div class="radio-inputs">
+                        <label class="radio">
+                            <input type="radio" name="price" value="<15000">
+                            <span class="name">low</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="price" value=">15000 AND price <50000">
+                            <span class="name">medium</span>
+                        </label>
+                            
+                        <label class="radio">
+                            <input type="radio" name="price" value=">50000" >
+                            <span class="name">high</span>
+                        </label>
+                        </div>
                     
-                    <h1>Storage</h1>
-                    <div style="display: flex; flex-direction:row">
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Low</p>
-                    <input type="radio" name="storage" value="low">
-                    </div>
+                    <h1 class="catTitles">Storage</h1>
 
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">Medium</p>
-                    <input type="radio" name="storage" value="medium">
-                    </div>
+                    <div class="radio-inputs">
+                        <label class="radio">
+                            <input type="radio" name="storage" value="low">
+                            <span class="name">low</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="storage" value="medium">
+                            <span class="name">medium</span>
+                        </label>
+                            
+                        <label class="radio">
+                            <input type="radio" name="storage" value="high" >
+                            <span class="name">high</span>
+                        </label>
+                        </div>
 
-                    <div style="display: flex; flex-direction:row">
-                    <p class="categories">High</p>
-                    <input type="radio" name="storage" value="high">
-                    </div>
-                    </div>
-
-                    <input type="text" placeholder="any keywords?" name="keywords">
+                    <input type="text" placeholder="any keywords?" name="keywords" class="keywords">
 
                     <button class="LetsFilter" onclick="LetsFilter()" type="submit" name="filter"> Lets Filter </button>
 
@@ -127,16 +126,20 @@
 
         if(isset($_POST["filter"])){
 
-            echo $performance = $_POST["performance"];
-            echo $price = $_POST["price"];
-            echo $storage = $_POST["storage"];
-            echo $keyword = $_POST["keywords"];
-            echo $type = $_POST["type"];
+         $performance = $_POST["performance"];
+         $price = $_POST["price"];
+         $storage = $_POST["storage"];
+         $keyword = $_POST["keywords"];
+         $type = $_POST["type"];
 
+         if($keyword!=null && $price === null){
+            $filter = "SELECT * FROM elec WHERE device LIKE '%$keyword%';";
+         }
             
-            if($keyword!=null){
+            else if($keyword!=null){
                 $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND device LIKE '%$keyword%' AND type = '$type'; ";
              }
+
 
              else{
                 $filter = "SELECT * FROM elec WHERE performance = '$performance' AND price $price AND storage = '$storage' AND type = '$type';; ";
@@ -175,8 +178,6 @@
     }}
     ?>
     </div>
-
-
             <script src="backend.js"></script>
 
         </body>
