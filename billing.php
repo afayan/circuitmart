@@ -30,7 +30,7 @@
 
     <div style="background-color: yellow; width: 400px; bottom:0px; position:absolute; height:40%; padding:20px; border-radius:10px; margin:10px">
     <p class="total"></p>
-    <button class="billingButtons">checkout</button>
+    <button class="billingButtons" onclick="checkOut()">checkout</button>
     </div>
 
 
@@ -77,6 +77,12 @@ function deleteItem(index) {
     cart.splice(index, 1);
     renderItems(); // Update the cart display after deletion
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function checkOut(){
+    localStorage.setItem('readyCart', JSON.stringify(cart));
+    localStorage.setItem('TotalAmount', JSON.stringify(totalprice));
+    window.location.href = "checkout.php";
 }
 
 renderItems(); // Call renderItems initially to display the cart

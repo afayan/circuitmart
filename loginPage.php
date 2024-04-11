@@ -65,7 +65,54 @@
                     <button id="firstButton" type="submit" name = "loginButton">
                         <a style="color: white; text-decoration: none;" >Log In</a>
                     </button>
-                    <button>Forget Password?</button>
+                    
+   
+
+<?php
+
+if(isset($_POST['loginButton'])){
+    $email = $_POST['Email'];
+    $inputpassword = $_POST['Password'];
+
+   // echo $email;
+   // echo $inputpassword;
+
+
+   $verify = "select * from users where email = '$email' ;";
+   $userInfo = mysqli_query($conn, $verify);
+
+   $row = mysqli_fetch_assoc($userInfo);
+
+    $retrievedPassword = $row['password'];
+
+   // echo $retrievedPassword;
+
+    if (password_verify($inputpassword, $retrievedPassword)) {
+      //  echo "correct";
+        # code...
+
+        //session_start();
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['Loggedemail'] = $row['email'];
+        $_SESSION['userId'] = $row['userId'];
+
+        echo "<script>window.location.href = 'homepage.php';</script>";
+                exit();
+    }
+    else{
+        echo "<div style='color: red; text-align: center;'>Incorrect password or username, please try again.</div>";
+
+    
+
+        
+    }
+
+}
+
+
+?>
+
+<button>Forget Password?</button>
 
                 </div>
                 </form>
@@ -73,7 +120,8 @@
             </div>
         </div>
     </main>
-    <footer>
+
+<footer>
         <div class="container-1">
             <nav>
                 <ul>
@@ -126,42 +174,3 @@
 </body>
 
 </html>
-
-<?php
-
-if(isset($_POST['loginButton'])){
-    $email = $_POST['Email'];
-    $inputpassword = $_POST['Password'];
-
-   // echo $email;
-   // echo $inputpassword;
-
-
-   $verify = "select * from users where email = '$email' ;";
-   $userInfo = mysqli_query($conn, $verify);
-
-   $row = mysqli_fetch_assoc($userInfo);
-
-    $retrievedPassword = $row['password'];
-
-   // echo $retrievedPassword;
-
-    if (password_verify($inputpassword, $retrievedPassword)) {
-      //  echo "correct";
-        # code...
-
-        //session_start();
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['Loggedemail'] = $row['email'];
-
-        echo "<script>window.location.href = 'homepage.php';</script>";
-                exit();
-    }
-    else{
-        echo "incorrect password. Get Lost";
-    }
-
-}
-
-
-?>

@@ -43,6 +43,17 @@ session_start();
             <span class="button-content" >Search </span>
           </button>
              
+          <button class="topbutton" onclick="window.location.href='typepage.php?type=laptop'">
+            <span class="button-content" >Laptops </span>
+          </button>
+
+          <button class="topbutton" onclick="window.location.href='typepage.php?type=phone'">
+            <span class="button-content" >Phones </span>
+          </button>
+
+          <button class="topbutton" onclick="window.location.href='coupons.php?name=<?php echo $_SESSION['Loggedemail']; ?>'">
+            <span class="button-content" >Coupons </span>
+          </button>
           
      
     </div>
