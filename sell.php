@@ -97,6 +97,11 @@ button:hover {
       </div>
 
       <div class="form-group">
+        <label for="product-specs">Product Specs:</label>
+        <textarea id="product-specs" name="product-specs" rows="6" required></textarea>
+      </div>
+
+      <div class="form-group">
   <label for="product-image">Upload Image:</label>
   <input type="file" id="product-image" name="image" required>
 </div>
@@ -138,6 +143,7 @@ if(isset($_POST["sell"])){
 
     $name = $_POST["product-name"];
     $description = $_POST["product-description"];
+    $specs = $_POST['product-specs'];
     $price = $_POST["product-price"];
     $image = $_POST["image"];
     $type = $_POST["type"];
@@ -200,7 +206,7 @@ if(isset($_POST["sell"])){
 
     echo $name;
 
-    $insert = "INSERT INTO elec (device, price, image, description, storage, performance, type) VALUES ('$name', $price, '$image', '$description','$storage','$performance','$type')";
+    $insert = "INSERT INTO elec (device, price, image, description, storage, performance, type, info) VALUES ('$name', $price, '$image', '$description','$storage','$performance','$type', '$specs');";
 
     mysqli_query($conn, $insert);
 

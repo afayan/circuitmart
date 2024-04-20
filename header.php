@@ -24,7 +24,7 @@ session_start();
   <form method="post" action="header.php">
   <button class="logout" type="submit" name="logout">logout</button>
 </form>
-  <button onclick="dropProfile()">back</button>
+  <button onclick="dropProfile()" class="fb">back</button>
 </div>
 
     <div class="sidebar">       

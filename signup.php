@@ -68,7 +68,7 @@ include "database.php";
                     <br>
 
                     <div class="buttons">
-                    <button id="firstButton" type="submit" name="createAccount"><a style="color: white; text-decoration: none;">Create Account</a></button>
+                    <button id="firstButton" type="submit" name="createAccount"><a style="color: black; text-decoration: none;">Create Account</a></button>
                     <br>
                     <button id="secondButton" type="button">
                         <img width="5px" src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo">

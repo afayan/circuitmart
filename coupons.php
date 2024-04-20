@@ -1,6 +1,7 @@
 <?php
     require_once "database.php";
-    #include "header.php";
+    include "header.php";
+    
 
 
     $userEmail = $_GET['name'];
@@ -50,13 +51,14 @@
 .cookieHeading {
   font-size: 1.5em;
   font-weight: 600;
-  color: rgb(241, 241, 241);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
   z-index: 2;
 }
 
 .cookieDescription {
   font-size: 0.9em;
-  color: rgb(241, 241, 241);
+  color: black;
   z-index: 2;
 }
 
@@ -83,6 +85,26 @@
 </head>
 <body>
     
+<h1 class="titles" style="margin-top: 150px;">Coupons</h1>
+
+  <div class="cardRow" style=" display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+    justify-content: flex-start;
+    height: max-content;
+    background-color: rgb(68, 68, 68);
+    z-index: 20px;
+    top: 90px;
+    margin: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    gap:20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);">
+
+
 
     <?php
 
@@ -91,10 +113,11 @@
 
         if ($couponNo['couponType'] == 'A') {
             ?>
-            <div class="cookieCard" style="background: linear-gradient(to right, rgb(255, 104, 104), rgb(255, 152, 152));
+            <div class="cookieCard" style="background: linear-gradient(to right, rgb(205, 127, 50), rgb(184, 115, 51));
+
 ">
-              <p class="cookieHeading">CircuitMart Gamma Coupon</p>
-              <p class="cookieDescription">Get 20% off on your purchase!</p>
+              <p class="cookieHeading">CircuitMart Bronze Coupon</p>
+              <p class="cookieDescription">Get 5% off on your purchase!</p>
               <button class="acceptButton">Coupon Code: <?php  echo $couponNo['couponType'];
         echo $couponNo['couponId']; ?></button>
             </div>
@@ -103,10 +126,9 @@
 
 elseif ($couponNo['couponType'] == 'B') {
     ?>
-    <div class="cookieCard" style="background: linear-gradient(to right, rgb(93, 230, 93), rgb(136, 230, 136));
-">
-      <p class="cookieHeading">CircuitMart Beta Coupon.</p>
-      <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="#">What for?</a></p>
+    <div class="cookieCard" style="background: linear-gradient(to right, rgb(192, 192, 192), rgb(224, 224, 224));">
+      <p class="cookieHeading">CircuitMart Silver Coupon.</p>
+      <p class="cookieDescription">Get 10% off on your purchase!</p>
       <button class="acceptButton">Coupon Code: <?php  echo $couponNo['couponType'];
         echo $couponNo['couponId']; ?></button>    </div>
             <?php  }
@@ -114,18 +136,20 @@ elseif ($couponNo['couponType'] == 'B') {
 
 else {
     ?>
-    <div class="cookieCard">
-      <p class="cookieHeading">CircuitMart Alpha Coupon.</p>
-      <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="#">What for?</a></p>
+    <div class="cookieCard" style="background: linear-gradient(to right, rgb(255, 215, 0), rgb(255, 245, 0));">
+      <p class="cookieHeading">CircuitMart Gold Coupon.</p>
+      <p class="cookieDescription">Get 20% off on your purchase!</p>
       <button class="acceptButton">Coupon Code: <?php  echo $couponNo['couponType'];
         echo $couponNo['couponId']; ?></button>    </div>
             <?php 
             }
 
         
-        echo $couponNo['couponType'];
-        echo $couponNo['couponId'];
+        //echo $couponNo['couponType'];
+        //echo $couponNo['couponId'];
     }
 ?>
+
+</div>
 </body>
 </html>

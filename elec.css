@@ -388,6 +388,8 @@
 .product-image {
   width: 80px; /* Adjust the size of the product image */
   border-radius: 10px; /* Optional: Add rounded corners to the image */
+  max-height: 120px;
+  background-size: cover;
 }
 
 .product-name {
@@ -715,6 +717,7 @@
     font-size: 16px;
     color: #555;
     outline: none;
+    width: 500px;
   }
 
   .tags{
@@ -937,6 +940,69 @@
   font-size: 20px;
   padding-left: 20px;
 }
+
+.checkOutButtons{
+  height: 45px;
+  margin: 10px;
+  
+}
+
+.fb, .logout, .billingButtons{
+  width: fit-content;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #E0E1E4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.delbuttons{
+  width: fit-content;
+  min-width: 100px;
+  height: 35px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #E0E1E4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: rgb(203, 127, 127);
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.texty{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+}
+
+.textyWhite{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding-left: 20px;
+}
+
+.finalCards{
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+ width: 190px;
+ height: 104px;
+ padding: 5px;
+ margin: 10px;
+ border-radius: 1rem;
+ overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
+}
+
+
 
 
 

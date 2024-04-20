@@ -11,10 +11,10 @@ include "header.php";
     </head>
 <body style="margin: 0px; background-color: grey;">
 
-<h1 style="margin-top: 150px;">Search</h1>
+<h1 style="margin-top: 150px;" class="texty">Search</h1>
 <form action="searchpage.php" method="POST">
 <input type="text" name="searchQuery" class="inputFilter">
-<button type="submit" >Search</button>
+<button type="submit" class="fb" >Search</button>
 </form>
 <div class="cardRow" style="margin-top: 30px; margin-left: 10px ">
 <?php

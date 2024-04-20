@@ -81,6 +81,8 @@ include "header.php";
         <h2 class="deviceName"><?php echo $row['device']; ?></h2>
         <p><strong>Price:</strong> <?php echo $row['price']; ?></p>
         <p><strong>Description:</strong> <?php echo $row['description']; ?></p>
+        <p><strong>Specs</strong> <?php echo $row['info']; ?></p>
+
         <!-- You can add more details here if needed -->
         <button class="add-to-cart-button">Add to Cart</button>
     </div>
@@ -144,7 +146,9 @@ include "header.php";
         // Save the updated cart to local storage
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        console.log("Cart updated:", cart);    }
+        console.log("Cart updated:", cart);  
+        alert(product.name + ' added to cart');
+          }
 
     // Event listener to add product to cart when the "Buy Now" button is clicked
     document.addEventListener('DOMContentLoaded', function() {

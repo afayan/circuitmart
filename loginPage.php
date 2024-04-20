@@ -63,7 +63,7 @@
                     <br>
                     <div class="buttons">
                     <button id="firstButton" type="submit" name = "loginButton">
-                        <a style="color: white; text-decoration: none;" >Log In</a>
+                        <a style="color: black; text-decoration: none;" >Log In</a>
                     </button>
                     
    
