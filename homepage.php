@@ -30,7 +30,7 @@
     <div class="video-container">
       <video autoplay muted src="images/cktmartvideo.mp4"></video>
   </div>
-  <h1 class="titles">For you</h1>
+  <h1 class="titles">Popular</h1>
 
   <div class="cardRow" style=" display: flex;
     flex-direction: row;
@@ -48,7 +48,32 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);">
     <?php
-    while($row = mysqli_fetch_assoc($all_product)){
+
+   $getPopularProducts = "  SELECT *
+   FROM elec
+   WHERE deviceid IN (
+       SELECT product_id
+       FROM (
+           SELECT product_id, AVG(rating) AS average
+           FROM rating
+           GROUP BY product_id
+       ) AS t
+       WHERE average > (
+           SELECT AVG(average)
+           FROM (
+               SELECT product_id, AVG(rating) AS average
+               FROM rating
+               GROUP BY product_id
+           ) AS t
+       )
+   );";
+
+
+   $popularProductsresult = mysqli_query($conn, $getPopularProducts);
+   
+
+
+    while($row = mysqli_fetch_assoc($popularProductsresult)){
       
       if ($counter < 6) {
         # code...
@@ -104,6 +129,10 @@
   <?php
   }
   ?>
+
+<a href="typepage.php?type=phone" class="newcard" class="newcard" style="text-decoration: none; width:60px">
+    more
+  </a>
   </div>
 
 
@@ -131,6 +160,9 @@
   <?php
   }
   ?>
+  <a href="typepage.php?type=laptop" class="newcard" style="text-decoration: none; width:60px">
+    more
+  </a>
   </div>
 
     <script src="backend.js"></script>

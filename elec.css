@@ -9,6 +9,10 @@
     z-index: 100;
     position: fixed;
 
+    background: 
+    linear-gradient(#0007, #0000),
+    #123;
+
     
 }
 
@@ -41,7 +45,7 @@
     padding-bottom: 0px;
     margin: 0px;
     background-color: #212121;
-    height: 10%;
+    height: 7.5%;
     z-index: 90;
     position: fixed;
     top: 60px;
@@ -66,6 +70,8 @@
     height: 50px;
     margin: 5px;
     width: 120px;
+
+    /*
     background: #333;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -86,22 +92,44 @@
       inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
     box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
       inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+*/
+
+
+ 
+ border-radius: 9px;
+ background: grey;
+ border: none;
+ font-family: inherit;
+ text-align: center;
+ cursor: pointer;
+ transition: 0.4s;
   }
   
   .topbutton:hover {
+
+    /*
     -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
     box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
     color: #d6d6d6;
     -webkit-transition: 500ms;
     transition: 500ms;
+    */
+
+    box-shadow: 7px 5px 56px -14px #C3D900;
+
   }
   
   .topbutton:active {
+    /*
     -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
     box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
     color: #d6d6d6;
     -webkit-transition: 100ms;
     transition: 100ms;
+    */
+
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #C3D900;
   }
 
 .rightside{
@@ -990,7 +1018,7 @@
 
 .finalCards{
   --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
- width: 190px;
+ width: 490px;
  height: 104px;
  padding: 5px;
  margin: 10px;
@@ -1000,10 +1028,4 @@
  background: var(--background);
  position: relative;
  z-index: 1;
-}
-
-
-
-
-
- 
+} 

@@ -293,8 +293,7 @@ body {
        
 
     </form>
-    <div class="cartRow" style=" right: 60px; position:fixed">
-    
+    <div class="cartRow" style=" right: 60px; position:fixed">    
 
 
     </div>
@@ -319,7 +318,7 @@ body {
             document.cookie = "amount = "+amount;
 
             cartRow = document.querySelector('.cartRow')
-            let cartItemRenderings2 = '<h1 class = "texty" >Cart summary</h1>';
+            let cartItemRenderings2 = '<h1 class = "textyWhite" >Cart summary</h1>';
 
             for (let i = 0; i < mycart.length; i++) {
                 const name = mycart[i].name;
@@ -391,8 +390,12 @@ foreach ($couponsAvailable as $element) {
         }
 
         else {
-            echo "invalid coupon";
-            echo $_SESSION['flag'];
+           // echo "invalid coupon";
+           // echo $_SESSION['flag'];
+            
+            // Display an alert message
+            echo "<script>alert('Invalid coupon ID');</script>";
+
 
         }
    } 

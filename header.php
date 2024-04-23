@@ -9,7 +9,12 @@ session_start();
     <title>ECelec</title>
     <link rel="stylesheet" href="elec.css">
 </head>
-<body style="margin: 0px; background-color: grey;">
+<body style="margin: 0px; background-color: grey;
+/*
+background: 
+    linear-gradient(#0007, #0000),
+    #123;
+*/">
   <div class="topbar" >
     <p style="font-size: 20px; margin-left: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; color: white; margin-right:-30px ;">Circuit Mart</p>
     <div style="width: 30%; display: flex; flex: 1;"></div>

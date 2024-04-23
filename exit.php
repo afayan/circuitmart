@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-echo $_SESSION['won'];
+//echo $_SESSION['won'];
 ?>
 
 <html lang="en">
@@ -11,9 +11,18 @@ echo $_SESSION['won'];
     <title>Thank U</title>
     <style>
 
+        .congo{
+            position: absolute;
+            z-index: 9999;
+            top: 70%;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            left: 30%;
+            width: 420px;
+        }
+
 .cookieCard {
-    position: fixed;
-    z-index: 999;
+    z-index: 99999;
     width: 300px;
     height: 200px;
     background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
@@ -23,8 +32,10 @@ echo $_SESSION['won'];
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    position: relative;
+    position:absolute;
     overflow: hidden;
+    top: 60%;
+    left: 60%;
 }
 
 .cookieCard::before {
@@ -76,7 +87,10 @@ echo $_SESSION['won'];
     </style>
 </head>
 <body>
-    <h1 style="margin-top: 15% ; margin-left:28%; position:absolute; font-family:Arial, Helvetica, sans-serif; font-size:40px">Thank You for shopping with us, <?= $_SESSION['username'] ;?></h1>
+    <h1 style="margin-top: 10% ; margin-left:28%; position:absolute; font-family:Arial, Helvetica, sans-serif; font-size:40px">Thank You for shopping with us, <?= $_SESSION['username'] ;?>
+    <p style="font-size: 20px;">click anywhere to continue</p>
+</h1>
+    
 <div class="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
 </svg>
 </div>
@@ -93,6 +107,8 @@ if ($_SESSION['won']) {
 if ($_SESSION['won'] == 'A') {
     
 ?>
+
+<p class="congo">Congrats! You won a BRONZE coupon</p>
 <div class="cookieCard" style="background: linear-gradient(to right, rgb(205, 127, 50), rgb(184, 115, 51));">
   <p class="cookieHeading">Cookies.</p>
   <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="#">What for?</a></p>
@@ -104,11 +120,19 @@ if ($_SESSION['won'] == 'A') {
 } else if ($_SESSION['won'] == 'B') {
     # code...
     ?>
+
+    <div>
+
+    <p class="congo">Congrats! You won a SILVER coupon</p>
     <div class="cookieCard" style="background: linear-gradient(to right, rgb(192, 192, 192), rgb(224, 224, 224));">
-  <p class="cookieHeading">Cookies.</p>
+  <p class="cookieHeading">Coupon.</p>
   <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="#">What for?</a></p>
   <button class="acceptButton">Understood</button>
 </div>
+
+    </div>
+
+ 
 
 <?php
     
@@ -117,6 +141,8 @@ if ($_SESSION['won'] == 'A') {
 elseif ($_SESSION['won'] == 'C') {
     # code...
     ?>
+    <p class="congo">Congrats! You won a GOLD coupon</p>
+
     <div class="cookieCard" style="background: linear-gradient(to right, rgb(255, 215, 0), rgb(255, 245, 0));">
       <p class="cookieHeading">Cookies.</p>
       <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="#">What for?</a></p>
@@ -130,11 +156,11 @@ elseif ($_SESSION['won'] == 'C') {
 
 ?>
 
-<div class="cookieCard">
-  <p class="cookieHeading">Cookies.</p>
-  <p class="cookieDescription">By using this website you automatically accept that we use cookies. <a href="#">What for?</a></p>
-  <button class="acceptButton">Understood</button>
-</div>
-
+<script>
+        document.body.addEventListener('click', function() {
+            window.location.href = "homepage.php"; 
+        });
+    </script>
 </body>
+
 </html>
