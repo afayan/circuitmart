@@ -50,6 +50,7 @@ if (isset($_GET["type"])) {
         <?php echo $row["device"] ?>
     </h3>
         <p class="product-price">
+        &#8377
         <?php echo $row["price"] ?>
         </p>
       <!--  <button class="add-to-cart-button">Add to Cart</button>  -->

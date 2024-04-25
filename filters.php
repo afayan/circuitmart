@@ -55,14 +55,14 @@
                     </label>
                     </div>
 
-                    <h1 class="catTitles">Performance</h1>
+                    <h1 class="catTitles">Performance (RAM) </h1>
     
 
                         <div class="radio-inputs">
                         <label class="radio">
                             <input type="radio" name="performance" value="low">
                             <span class="name">low</span>
-                        </label>
+                        </label> 
                         <label class="radio">
                             <input type="radio" name="performance" value="medium">
                             <span class="name">medium</span>
@@ -164,6 +164,7 @@
         <?php echo $row["device"] ?>
     </h3>
         <p class="product-price">
+        &#8377
         <?php echo $row["price"] ?>
         </p>
 

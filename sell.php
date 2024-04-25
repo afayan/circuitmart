@@ -92,13 +92,13 @@ button:hover {
         <input type="text" id="product-name" name="product-name" required>
       </div>
       <div class="form-group">
-        <label for="product-description">Product Description:</label>
-        <textarea id="product-description" name="product-description" rows="4" required></textarea>
+        <label for="product-description">Product Catchphrase:</label>
+        <textarea id="product-description" name="product-description" rows="4" required placeholder="add a small phrase which the buyer will first see before clicking your product"></textarea>
       </div>
 
       <div class="form-group">
         <label for="product-specs">Product Specs:</label>
-        <textarea id="product-specs" name="product-specs" rows="6" required></textarea>
+        <textarea id="product-specs" name="product-specs" rows="6" required  placeholder="add all details about your product, including description and specs"></textarea>
       </div>
 
       <div class="form-group">
@@ -209,6 +209,7 @@ if(isset($_POST["sell"])){
     $insert = "INSERT INTO elec (device, price, image, description, storage, performance, type, info) VALUES ('$name', $price, '$image', '$description','$storage','$performance','$type', '$specs');";
 
     mysqli_query($conn, $insert);
+    header('Location:sold.html');
 
   }
 ?>

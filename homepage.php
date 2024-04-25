@@ -87,7 +87,7 @@
         <?php echo $row["device"] ?>
     </h3>
         <p class="product-price">
-        <?php echo $row["price"] ?>
+        &#8377 <?php echo $row["price"] ?>
         </p>
       <!--  <button class="add-to-cart-button">Add to Cart</button>  -->
 
@@ -108,7 +108,13 @@
 
 <div class="cardRow" style="margin-top: 30px;">
   <?php
-  while($row = mysqli_fetch_assoc($phoneList)){   
+
+  $count2 = 0;
+  while($row = mysqli_fetch_assoc($phoneList)){
+    
+    if($count2 < 8){
+      $count2++;
+    
   ?>
 
 <div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black"> 
@@ -117,6 +123,7 @@
         <?php echo $row["device"] ?>
     </h3>
         <p class="product-price">
+        &#8377
         <?php echo $row["price"] ?>
         </p>
 
@@ -127,10 +134,10 @@
         </a>
     </div>
   <?php
-  }
+  }}
   ?>
 
-<a href="typepage.php?type=phone" class="newcard" class="newcard" style="text-decoration: none; width:60px">
+<a href="typepage.php?type=phone" class="newcard" class="newcard" style="text-decoration: none; width:45px">
     more
   </a>
   </div>
@@ -141,7 +148,12 @@
 
 <div class="cardRow" style="margin-top: 30px;">
   <?php
+
+  $count3 = 0;
   while($row = mysqli_fetch_assoc($laptopList)){   
+
+    if($count3 < 8){
+      $count3++;
   ?>
 
 <div class="newcard" style="width: 180px;">  <a href="product.php?id=<?php echo $row["deviceid"];  ?>" style= "text-decoration: none; color:black;"> 
@@ -150,6 +162,7 @@
         <?php echo $row["device"] ?>
     </h3>
         <p class="product-price">
+        &#8377
         <?php echo $row["price"] ?>
         </p>
         <p class="descript" style="color:gray">
@@ -158,9 +171,10 @@
         </a>
     </div>
   <?php
-  }
+  }    }
+
   ?>
-  <a href="typepage.php?type=laptop" class="newcard" style="text-decoration: none; width:60px">
+  <a href="typepage.php?type=laptop" class="newcard" style="text-decoration: none; width:45px">
     more
   </a>
   </div>

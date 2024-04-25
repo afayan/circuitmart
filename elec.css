@@ -9,10 +9,13 @@
     z-index: 100;
     position: fixed;
 
-    background: 
-    linear-gradient(#0007, #0000),
-    #123;
-
+    background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: #2196f3;
     
 }
 
@@ -45,7 +48,7 @@
     padding-bottom: 0px;
     margin: 0px;
     background-color: #212121;
-    height: 7.5%;
+    height: 70px;
     z-index: 90;
     position: fixed;
     top: 60px;
@@ -97,7 +100,6 @@
 
  
  border-radius: 9px;
- background: grey;
  border: none;
  font-family: inherit;
  text-align: center;
@@ -432,12 +434,20 @@
 
 .add-to-cart-button {
   padding: 8px 16px;
-  background-color: #045164;
+  /*background-color: #045164;*/
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  
+  background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background-color: #114066;
 }
 
 .add-to-cart-button:hover {
@@ -686,7 +696,7 @@
   }
 
   .profileMenu{
-    background-color: #818181;
+   
     padding: 20px;
     width: 300px;
     height: 500px;
@@ -697,6 +707,14 @@
     right: 0px;
     transition: all;
     transition: top 0.5s ease;
+
+    background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: skyblue;
   }
 
   .profile{
@@ -975,6 +993,10 @@
   
 }
 
+.checkOutButtons::placeholder{
+  color: #000000;
+}
+
 .fb, .logout, .billingButtons{
   width: fit-content;
   min-width: 100px;
@@ -1017,7 +1039,7 @@
 }
 
 .finalCards{
-  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  --background: skyblue;
  width: 490px;
  height: 104px;
  padding: 5px;

@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn) {
-    echo "Connected";
+    echo "C";
 }
 
 

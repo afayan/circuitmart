@@ -14,33 +14,18 @@
 
 <body>
     <header>
-        <div class="summerSale">
-            <p>Summer Sale for All Swin Suits And Free Express Delievery - OFF 50%!</p>
-            <a href="" class="shopNow">ShopNow</a>
-            <select name="" id="" class="language">
-                <option value="">English</option>
-                <option value="">Hindi</option>
-                <option value="">Read More....</option>
-            </select>
-        </div>
+
 
         <div class="NavigationBar">
-            <h2>CircuitMart</h2>
+            <h2 style="left: -350px;">CircuitMart</h2>
             <ul>
-                <li>Home</li>
+                <a href="firstpage.html" class="navbutton">Home </a>
                 <li>Contact</li>
-                <a href="sell.php"><li>Sell</li> </a>
-                <a href="signup.php"><li>Sign Up</li></a>
+                <a href="sell.php" class="navbutton">Sell </a>
+                <a href="signup.php" class="navbutton">Sign Up</a>
             </ul>
             <label for=" "></label>
-            <div class="search-container">
-                <form action="">
-                    <input type="text" placeholder="What are you looking for?" class="search-input">
-                    <button type="submit" class="search-button">
-                        <img src="/sem4miniproj/Assests/SVG/search.svg" alt="Search Icon" class="search-icon">
-                    </button>
-                </form>
-            </div>
+        
         </div>
         <div class="line">
         </div>
@@ -51,7 +36,7 @@
                 <img src="images/stock1.jpg" alt="">
             </div>
             <div class="InputForm">
-                <h1>Log in to Exclusive</h1>
+                <h1>Log in to CircuitMart</h1>
                 <p>Enter your details below</p>
                 <form action="loginPage.php" method="post">
                     <label for="Email"></label>
@@ -112,7 +97,7 @@ if(isset($_POST['loginButton'])){
 
 ?>
 
-<button>Forget Password?</button>
+<button > <a href="signup.php" style="text-decoration: none; color:black"> Dont have an account? Sign up!</a> </button>
 
                 </div>
                 </form>

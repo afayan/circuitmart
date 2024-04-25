@@ -12,25 +12,17 @@ include "database.php";
     <link rel="stylesheet" href="SignUp.css">
 </head>
 
-<body>
+<body> 
     <header>
-        <div class="summerSale">
-            <p>Summer Sale for All Swin Suits And Free Express Delievery - OFF 50%!</p>
-            <a href="" class="shopNow">ShopNow</a>
-            <select name="" id="" class="language">
-                <option value="">English</option>
-                <option value="">Hindi</option>
-                <option value="">Read More....</option>
-            </select>
-        </div>
+    
 
         <div class="NavigationBar">
             <h2>CircuitMart</h2>
             <ul>
-                <li>Home</li>
+                <li> <a href="firstpage.html">Home</a></li>
                 <li>Contact</li>
                 <li>About</li>
-                <li>Sign Up</li>
+                <li><a href="loginPage.php">Login</a></li>
             </ul>
             <label for=" "></label>
             <div class="search-container">
@@ -45,7 +37,7 @@ include "database.php";
         <div class="line">
         </div>
     </header>
-    <main>
+    <main >
         <div class="SignInPage">
             <div class="Img">
                 <img src="images/stock1.jpg" alt="">

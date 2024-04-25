@@ -9,10 +9,10 @@ include "database.php";
 $final = 0;
 //$_SESSION['flag'] = 0;
 $varflag = 0;
-echo "session flag at beginning is " .  $_SESSION['flag'] . "now";
+//echo "session flag at beginning is " .  $_SESSION['flag'] . "now";
 
 $_SESSION['toPay'] = 0;
-echo $_SESSION['userId'];
+//echo $_SESSION['userId'];
 
 
 $price = $_COOKIE['amount'];
@@ -36,7 +36,7 @@ $_SESSION['toPay'] = $price;
         
 
             $cid = $cp['couponType'] . $cp['couponId'];
-            echo $cid;
+           // echo $cid;
 
             $couponsAvailable[$j] = $cid;
             $j++;
@@ -59,13 +59,13 @@ $_SESSION['toPay'] = $price;
     <style>
 
 body {
-    background: 
-    linear-gradient(#0007, #0000),
-    #123;
-  margin: 0;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: #2196f3;
 }
 
 @keyframes firework {
@@ -276,8 +276,9 @@ body {
 
 
     <div>
-    <input class="checkOutButtons"  type="text" placeholder="Enter coupon ID" name="enteredCouponId" style="box-shadow: 2px 2px 15px #8707ff inset; color: white;
+    <input class="checkOutButtons"  type="text" placeholder="Enter coupon ID" name="enteredCouponId" style=" color: white;
       border: 2px solid #8707ff;
+      color:black;
       border-radius: 10px;
       padding: 10px 25px;
       background: transparent;
@@ -300,7 +301,7 @@ body {
 
 
             
-    <a href="billing.php" style="text-decoration:none; padding:10px; background-color:white; width:90px; height: 35px; margin-top:28px">Back</a>
+    <a href="billing.php" style="text-decoration:none; padding:10px; margin-left: 900px"><button class="fb">Back</button></a>
     <script>
         var amount = 0;
         var mycart 
@@ -366,9 +367,9 @@ body {
 
 <?php
 
-echo "Array elements:\n";
+//echo "Array elements:\n";
 foreach ($couponsAvailable as $element) {
-    echo $element . "\n";
+    //echo $element . "\n";
 }
    if (isset($_POST['checkCoupon'])) {
     # code...
@@ -378,14 +379,14 @@ foreach ($couponsAvailable as $element) {
 
         if (in_array($enteredId, $couponsAvailable) ) {
             # code...
-            echo "valid coupon";
+            //echo "valid coupon";
             applyCoupon($enteredId[0], $final);
             $_SESSION['used'] = $enteredId;
             $_SESSION['flag'] = 1;
             $varflag = 1;
 
 
-            echo "session flag is " .  $_SESSION['flag'] . "and varflag is " . $varflag;
+            //echo "session flag is " .  $_SESSION['flag'] . "and varflag is " . $varflag;
             //its working till here
         }
 

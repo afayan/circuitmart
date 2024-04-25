@@ -35,18 +35,23 @@ include "header.php";
         .leftside, .rightside {
             flex: 1;
             display: flex;
-            justify-content: center;
+            justify-items: flex-start;
             align-items: center;
         }
         .leftside {
+            max-height: 600px;
+            flex-direction: column;
         }
         .rightside {
-    flex-direction: column;
-    padding: 20px;
-    align-items: center; 
-    justify-content: flex-start; 
-    top: 260px;
-    height: 60%;
+        
+        margin-top: 0px;    
+        font-family: Arial, Helvetica, sans-serif;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center; 
+        justify-content: flex-start; 
+        top: 0px;
+        height: 98%;
 }
         img {
             max-width: 100%;
@@ -135,22 +140,27 @@ include "header.php";
 </head>
 <body >
 
-<div style="display: flex; flex-direction:row">
+<div style="display: flex; flex-direction:row; margin-top:-70px">
     <div class="leftside">
         <img src="images/<?php echo $row['image'] ?>" alt="Product Image" style= "max-height: 500px;">
+
+        <button class="add-to-cart-button" style="margin: 30px; padding: 30px 70px">Add to Cart</button>
+    
     </div>
     <div class="rightside">
-        <h2 class="deviceName"><?php echo $row['device']; ?></h2>
+        <h1 class="texty"><?php echo $row['device']; ?></h1>
 
         <?php
             $averageFind = "SELECT AVG(rating) AS average_rating FROM rating WHERE product_id = $id;";
             $avgres = mysqli_query($conn, $averageFind);
             $avgrow = mysqli_fetch_assoc($avgres);
             $averageRating = $avgrow['average_rating'];
-            echo $averageRating . "and ";
+            //echo $averageRating . "and ";
             $intAverage = intval($averageRating);
-            echo $intAverage;
+            //echo $intAverage;
         ?>
+
+        <p>Rated <?= $averageRating ?>/5</p>
 
         <div class="rateStars">
             <?php
@@ -168,20 +178,34 @@ include "header.php";
     
 
 
-        <p><strong>Price:</strong> <?php echo $row['price']; ?></p>
-        <p style="width: 400px;"><strong>Description:</strong> <?php echo $row['description']; ?></p>
-        <p><strong>Specs</strong> <?php echo $row['info']; ?></p>
+        <p style="font-size: 30px; text-align: left;"><strong>Price:  &#8377 </strong> <?php echo $row['price']; ?>  </p>
+        <p style=" text-align: left; "><strong></strong> <?php echo $row['description']; ?></p>
+        <p style=" text-align: left; /* Align text to the left */
+    white-space: pre-wrap; /* Preserve line breaks */"><strong>About</strong> <?php echo $row['info']; ?></p>
 
         <!-- You can add more details here if needed -->
-        <button class="add-to-cart-button">Add to Cart</button>
+        
     </div>
 
 
     </div>
-    <p class="texty">Already used this product? Add a review!</p>
     
-    <form action="product.php?id= <?= $id ?>" method="post" style="padding:30px;">
-
+    <form action="product.php?id= <?= $id ?>" method="post" style="padding:30px; display:flex; flex-direction:column; margin: 10px;
+    width:560px;
+     background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: #2196f3;
+    
+    
+    ">
+    <p class="texty" style="font-size: 20px; margin:0px; padding-bottom:17px">Already used this product? Add a review!</p>
+    
+    <div>
+        <p class="texty" style="padding: 0px; margin:0px">Rate your experience out of 5</p>
         <div class="rating">
             <input value="5" name="rating" id="star5" type="radio">
             <label for="star5"></label>
@@ -195,8 +219,11 @@ include "header.php";
             <label for="star1"></label>
         </div>
 
+        </div>
+        
 
-        <input type="text" placeholder="review" name="review" style="margin: 10px; padding: 7px; border:none; border-radius:8px">
+
+        <input type="text" placeholder="review" name="review" style="margin: 0px; padding: 7px; border:none; border-radius:8px; width: 400px; margin-bottom: 20px; margin-top:10px">
 
         <button type="submit" name="addreview" class="fb"> Add review</button>
     </form>
@@ -214,9 +241,14 @@ include "header.php";
             # code...
         ?> 
         
-        <div style="background-color: #ccc; margin: 3px; border-radius: 10px;width:800px; margin-left:20px; padding-left:10px">
-            <p> <?php echo $revRows['userid'];?> </p>
-            <p> <?php echo $revRows['review'];?> </p>
+        <div style="background-color: #ccc; margin: 3px; border-radius: 10px;width:550px; margin-left:20px; padding-left:10px" class="texty">
+            <div style="display: flex; flex-direction:row">
+            <p class="texty"> <?php echo $revRows['userid'];?> </p>
+            <div style="width: 40px;"></div>
+            <p> rated <?php echo $revRows['rating']; ?>/5</p>
+            </div>
+   
+            <p style="padding-left: 20px;padding-right: 20px ; font-size: 20px; padding-bottom: 10px"> <?php echo $revRows['review'];?> </p>
         </div>
         
         <?php
@@ -250,7 +282,6 @@ include "header.php";
         <p class="descript" style="color:gray">
         <?php echo $nrow["description"] ?>      
         </p>
-        <button class="add-to-cart-button">Add to Cart</button>
 
         </a>
     </div>

@@ -51,9 +51,18 @@ header .NavigationBar {
     justify-content: center;
     align-items: center;
     gap: 170px;
-    height: 54px;
+    height: 80px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: #2196f3;
 }
 
 header .NavigationBar ul {
@@ -130,6 +139,7 @@ main .SignInPage {
     border: 2px solid black;
     width: auto;
     height: 700px;
+    
 }
 
 main .SignInPage img {
@@ -146,6 +156,17 @@ main .SignInPage .InputForm {
     height: 530px;
     margin-left: 120px;
     margin-top: 60px;
+    padding-right: 63px;
+    padding-bottom: 40px;
+}
+
+.InputForm{
+    background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 main .InputForm h1 {
@@ -191,13 +212,14 @@ main .buttons button {
 }
 
 main .buttons #firstButton {
-    color: white;
     background: linear-gradient(135deg, rgba(30, 64, 80, 0.403), rgba(16, 110, 187, 0.227));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 0px;
     border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);}
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: #2196f3;
+}
 
 main .buttons #secondButton {
     color: black;

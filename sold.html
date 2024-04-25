@@ -53,13 +53,13 @@ session_start();
 .cookieHeading {
   font-size: 1.5em;
   font-weight: 600;
-  color: black;
+  color: rgb(241, 241, 241);
   z-index: 2;
 }
 
 .cookieDescription {
   font-size: 0.9em;
-  color: black;
+  color: rgb(241, 241, 241);
   z-index: 2;
 }
 
@@ -87,7 +87,7 @@ session_start();
     </style>
 </head>
 <body>
-    <h1 style="margin-top: 10% ; margin-left:28%; position:absolute; font-family:Arial, Helvetica, sans-serif; font-size:40px">Thank You for shopping with us, <?= $_SESSION['username'] ;?>
+    <h1 style="margin-top: 10% ; margin-left:28%; position:absolute; font-family:Arial, Helvetica, sans-serif; font-size:40px">Your product is succesfully added to Circuitmart!
     <p style="font-size: 20px;">click anywhere to continue</p>
 </h1>
     
@@ -95,70 +95,20 @@ session_start();
 </svg>
 </div>
 
-<a href="homepage.php">Continue shopping</a>
+<a href="loginPage.php">Back to login</a>
 
 
-<?php
-
-if ($_SESSION['won']) {
-    # code...
 
 
-if ($_SESSION['won'] == 'A') {
+
     
-?>
-
-<p class="congo">Congrats! You won a BRONZE coupon</p>
-<div class="cookieCard" style="background: linear-gradient(to right, rgb(205, 127, 50), rgb(184, 115, 51));">
-  <p class="cookieHeading">Coupon</p>
-  <p class="cookieDescription">Get flat 5% off on your next purchase! <a href="#">What for?</a></p>
-  <button class="acceptButton">Use coupon code</button>
-</div>
-
-<?php
-
-} else if ($_SESSION['won'] == 'B') {
-    # code...
-    ?>
-
-    <div>
-
-    <p class="congo">Congrats! You won a SILVER coupon</p>
-    <div class="cookieCard" style="background: linear-gradient(to right, rgb(192, 192, 192), rgb(224, 224, 224));">
-  <p class="cookieHeading">Coupon.</p>
-  <p class="cookieDescription">Get flat 10% off on your next purchase!. <a href="#">What for?</a></p>
-  <button class="acceptButton">Use coupon code</button>
-</div>
-
-    </div>
-
- 
-
-<?php
-    
-}
-
-elseif ($_SESSION['won'] == 'C') {
-    # code...
-    ?>
-    <p class="congo">Congrats! You won a GOLD coupon</p>
-
-    <div class="cookieCard" style="background: linear-gradient(to right, rgb(255, 215, 0), rgb(255, 245, 0));">
-      <p class="cookieHeading">Coupon.</p>
-      <p class="cookieDescription">Get flat 20% off on your next purchase! <a href="#">What for?</a></p>
-      <button class="acceptButton">Use coupon code</button>
-    </div>
-    
-    <?php
-
-}}
 
 
-?>
+
 
 <script>
         document.body.addEventListener('click', function() {
-            window.location.href = "homepage.php"; 
+            window.location.href = "loginPage.php"; 
         });
     </script>
 </body>

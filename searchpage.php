@@ -42,13 +42,13 @@ else{
         <?php echo $row["device"] ?>
     </h3>
         <p class="product-price">
+        &#8377
         <?php echo $row["price"] ?>
         </p>
 
         <p class="descript" style="color:gray">
         <?php echo $row["description"] ?>      
         </p>
-        <button class="add-to-cart-button">Add to Cart</button>
 
         </a>
     </div>
